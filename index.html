@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mis 15 Años 💗</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap');
+
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:'Playfair Display',serif}
+body{overflow-x:hidden;background:#8e3557}
+button{font:inherit}
+
+.page{
+  min-height:100vh;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  padding:28px 16px;
+  background: url("imagen.png") center center / cover no-repeat;
+}
+.sparkle{position:absolute;z-index:2;color:#fff4f8;opacity:.8;animation:twinkle 2.5s infinite alternate}
+.s1{top:9%;left:10%;font-size:23px}.s2{top:20%;right:12%;font-size:17px;animation-delay:.7s}
+.s3{bottom:18%;left:17%;font-size:18px;animation-delay:1.2s}.s4{bottom:10%;right:17%;font-size:24px;animation-delay:.4s}
+
+.content{position:relative;z-index:5;width:min(760px,100%);text-align:center}
+.top-title{color:white;text-shadow:0 3px 12px #70233f;margin-bottom:15px}
+.top-title .crown{font-size:40px;color:#f9dfd3}
+.top-title h1{font:400 clamp(48px,9vw,82px)/.95 'Great Vibes',cursive;margin:3px 0}
+.top-title p{margin:8px 0;color:#ffeaf2;font-size:16px}
+
+.envelope-scene{transition:opacity .8s,transform .8s}
+.envelope-wrap{width:min(530px,90vw);height:340px;margin:20px auto;perspective:1200px;cursor:pointer}
+.envelope{position:relative;width:100%;height:100%;filter:drop-shadow(0 25px 22px rgba(58,8,29,.45));transform-style:preserve-3d}
+.env-back{position:absolute;inset:8% 0 0;background:linear-gradient(145deg,#fbd1df,#dc7798);border-radius:7px 7px 18px 18px;border:1px solid rgba(255,255,255,.65);z-index:1}
+.env-letter{position:absolute;left:9%;right:9%;top:7%;height:72%;background:linear-gradient(#fff5f8,#f9dce7);border:2px solid #d98ba4;z-index:2;padding:22px;color:#a23e62;transition:1s cubic-bezier(.2,.8,.2,1);font-family:'Great Vibes',cursive;font-size:35px}
+.env-letter .mini-crown{font-family:serif;font-size:29px;margin-bottom:6px}
+.env-flap{position:absolute;left:0;right:0;top:0;height:67%;background:linear-gradient(155deg,#ffdce6,#e78aa5);clip-path:polygon(0 0,100% 0,50% 75%);transform-origin:top;z-index:6;transition:1s cubic-bezier(.2,.8,.2,1);backface-visibility:hidden}
+.env-front{position:absolute;left:0;right:0;bottom:0;height:73%;background:linear-gradient(145deg,#f4a9c0,#d97091);clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);z-index:5}
+.bow{position:absolute;z-index:8;left:50%;top:54%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:50%;background:linear-gradient(#ffb5c9,#d76d8f);border:3px solid rgba(255,255,255,.75);display:grid;place-items:center;color:#fff;font-size:28px;box-shadow:0 4px 18px rgba(90,15,45,.35)}
+.bow::before,.bow::after{content:"";position:absolute;top:27px;width:72px;height:35px;background:#e887a4;z-index:-1}
+.bow::before{right:45px;transform:rotate(25deg);border-radius:8px 30px 8px 30px}
+.bow::after{left:45px;transform:rotate(-25deg);border-radius:30px 8px 30px 8px}
+.open-hint{display:inline-block;padding:12px 24px;border:1px solid rgba(255,255,255,.7);border-radius:30px;background:rgba(190,66,108,.7);color:white;box-shadow:0 8px 20px rgba(55,5,28,.25);cursor:pointer}
+
+.invitation{display:none;width:min(680px,100%);animation:rise 1s both}
+.card{position:relative;background:linear-gradient(145deg,#fff3f7,#f9d6e2);border:2px solid rgba(169,66,101,.48);box-shadow:0 28px 55px rgba(60,7,29,.42);padding:15px}
+.card::before{content:"";position:absolute;inset:9px;border:1px solid rgba(171,70,104,.45);pointer-events:none}
+.card-inner{position:relative;padding:26px 30px 30px}
+.corner{position:absolute;color:#c45a7c;font-size:38px}.c1{top:12px;left:13px}.c2{top:12px;right:13px;transform:scaleX(-1)}.c3{bottom:12px;left:13px;transform:scaleY(-1)}.c4{bottom:12px;right:13px;transform:scale(-1)}
+.card .crown{font-size:34px;color:#b6486e}
+.card h2,.rain h2,.goodbye{font:400 64px/1 'Great Vibes',cursive;color:#a23d62;margin:6px 0 15px}
+.card p{color:#853651;line-height:1.65;font-size:15px;margin:13px 0}
+.divider{display:flex;align-items:center;justify-content:center;gap:14px;color:#b2476c;margin:15px 0}
+.divider::before,.divider::after{content:"";height:1px;background:#c27691;width:105px}
+.card h3{font:400 37px 'Great Vibes',cursive;color:#a43d63;margin:8px 0 15px}
+.details{max-width:430px;margin:auto;text-align:left}
+.details div{display:flex;gap:12px;margin:11px 0;color:#80344f}
+.details b{width:24px;color:#b0476c;font-size:19px}
+.quote{font:400 30px/1.3 'Great Vibes',cursive!important;color:#96375c!important}
+.bottom-bow{width:105px;height:19px;background:#e487a4;margin:13px auto;border-radius:50% 50% 8px 8px}
+.rain{margin-top:24px;padding:35px 22px;background:rgba(255,239,245,.97);border:1px solid rgba(171,67,103,.48);box-shadow:0 20px 40px rgba(60,7,29,.3)}
+.rain h2{font-size:53px;margin:0}
+.rain p{font-size:16px}
+.rain-envelope{font-size:52px;color:#a94166;margin:10px}
+.thanks{font:400 28px/1.25 'Great Vibes',cursive!important;color:#99395f!important}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:25px 0}
+.location-section{margin:30px 0 10px;padding:30px 18px;background:rgba(255,248,249,.97);border-radius:18px;box-shadow:0 18px 35px rgba(60,7,29,.22);color:#4b2a20}
+.location-section h2{margin:0 0 12px;font-family:'Playfair Display',serif;font-size:clamp(25px,5vw,34px);color:#4b2a20}
+.location-section .location-subtitle{margin:0 0 20px;color:#8a6b61;font-size:16px}
+.map-wrap{width:min(600px,100%);margin:auto;border-radius:18px;overflow:hidden;box-shadow:0 8px 18px rgba(60,7,29,.18)}
+.map-wrap iframe{display:block;width:100%;height:300px;border:0}
+.maps-link{display:inline-block;margin-top:20px;padding:13px 28px;border-radius:28px;background:#98633d;color:white;text-decoration:none;font-size:15px;box-shadow:0 8px 16px rgba(60,7,29,.18)}
+@media(max-width:600px){.location-section{padding:24px 12px}.map-wrap iframe{height:270px}}
+.actions button{min-width:155px;padding:13px 17px;border-radius:16px;border:1px solid rgba(255,255,255,.8);background:rgba(255,218,229,.9);color:#923654;box-shadow:0 10px 20px rgba(62,8,30,.25);cursor:pointer}
+.actions span{display:block;margin-top:5px;font-size:14px}
+.goodbye{font-size:58px;color:white;text-shadow:0 3px 12px #70233f}
+.heart{color:#ffdce8;font-size:23px}
+
+body.opened .envelope-scene{display:none}
+body.opened .invitation{display:block}
+
+@keyframes rise{from{opacity:0;transform:translateY(45px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes twinkle{from{opacity:.25;transform:scale(.8)}to{opacity:1;transform:scale(1.2)}}
+
+@media(max-width:600px){
+  .page{padding:20px 10px}
+  .envelope-wrap{height:235px}
+  .card-inner{padding:23px 16px 25px}
+  .card h2{font-size:53px}
+  .card p{font-size:14px}
+  .details{font-size:14px}
+  .quote{font-size:27px!important}
+  .rain h2{font-size:44px}
+  .actions button{min-width:135px}
+}
+</style>
+</head>
+<body>
+
+<audio id="bgMusic" loop preload="auto">
+  <source src="cancion.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn" aria-label="Reproducir o pausar música" style="position:fixed;right:18px;bottom:18px;z-index:100;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.8);background:rgba(130,40,75,.45);color:white;font-size:21px;cursor:pointer;backdrop-filter:blur(4px)">♫</button>
+<div class="page">
+  <span class="sparkle s1">✦</span><span class="sparkle s2">✧</span>
+  <span class="sparkle s3">✦</span><span class="sparkle s4">✧</span>
+
+  <div class="content">
+    <section class="envelope-scene">
+      <div class="top-title">
+        <div class="crown">♕</div>
+        <h1>Mis 15 Años</h1>
+        <p>Una invitación muy especial...</p>
+      </div>
+
+      <div class="envelope-wrap" id="envelope">
+        <div class="envelope">
+          <div class="env-back"></div>
+          <div class="env-letter">
+            <div class="mini-crown">♕</div>
+            Mis 15 Años
+          </div>
+          <div class="env-flap" id="flap"></div>
+          <div class="env-front"></div>
+          <div class="bow">♥</div>
+        </div>
+      </div>
+
+      <button class="open-hint" id="openBtn">♥ &nbsp; Toca el sobre para abrir &nbsp; ♥</button>
+    </section>
+
+    <section class="invitation" id="invitation">
+      <article class="card">
+        <span class="corner c1">❧</span><span class="corner c2">❧</span>
+        <span class="corner c3">❧</span><span class="corner c4">❧</span>
+        <div class="card-inner">
+          <div class="crown">♕</div>
+          <h2>Mis 15 Años</h2>
+
+          <p>Hay momentos en la vida que merecen<br>ser celebrados y compartidos con las<br>personas que más queremos.</p>
+          <p>Por eso quiero invitarte a celebrar<br>conmigo una noche muy especial...</p>
+
+          <div class="divider">♥</div>
+          <h3>✦ Mi fiesta de 15 ✦</h3>
+
+          <div class="details">
+            <div><b>▣</b><span><strong>Fecha:</strong> 26 de septiembre 2026</span></div>
+            <div><b>◷</b><span><strong>Hora:</strong> 8:00 p. m.</span></div>
+            <div><b>⌖</b><span><strong>Lugar:</strong>Casa<br>Calle real del coco #134</span></div>
+          </div>
+
+          <div class="divider">♥</div>
+          <p class="quote">“Te espero para vivir<br>juntos una noche inolvidable.” 💖</p>
+          <div class="bottom-bow"></div>
+        </div>
+      </article>
+
+      <article class="rain">
+        <h2>Lluvia de sobres</h2>
+        <div class="divider">♥</div>
+        <p>15 años llenos de ilusion,<br>Amor y sueño,<br>Ven y acompañame a celebrar esta fecha inolvidable</p>
+        <div class="rain-envelope">✉</div>
+        <p class="thanks">¡Gracias por ser parte<br>de este momento tan importante<br>en mi vida!</p>
+      </article>
+
+      <section class="location-section" id="ubicacion">
+        <h2>CASA</h2>
+        <p class="location-subtitle">Te esperamos</p>
+
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!4v1789431504950!6m8!1m7!1sIha_GL3GebPuWkOfbH_dLA!2m2!1d10.27500564575215!2d-75.44340913449987!3f46.165230528437!4f-14.964358205435445!5f0.7820865974627469"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+
+        <a
+          class="maps-link"
+          href="https://www.google.com/maps/search/?api=1&query=10.27500564575215,-75.44340913449987"
+          target="_blank"
+          rel="noopener noreferrer">📍 &nbsp; Ver en Google Maps</a>
+      </section>
+
+      <div class="actions">
+      
+        <button onclick="confirmarAsistencia()">✓<span>Confirmar asistencia</span></button>
+        
+      </div>
+
+      <div class="goodbye">¡Nos vemos!</div>
+      <div class="heart">— ♥ —</div>
+    </section>
+  </div>
+</div>
+
+<script>
+const envelope = document.getElementById('envelope');
+const openBtn = document.getElementById('openBtn');
+const flap = document.getElementById('flap');
+const letter = document.querySelector('.env-letter');
+
+function abrirSobre(){
+  if(document.body.classList.contains('opened')) return;
+  flap.style.transform = 'rotateX(180deg)';
+  letter.style.transform = 'translateY(-100px) scale(1.04)';
+  setTimeout(() => {
+    document.body.classList.add('opened');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }, 900);
+}
+envelope.addEventListener('click', abrirSobre);
+openBtn.addEventListener('click', abrirSobre);
+
+
+const bgMusic = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+function iniciarMusica(){
+  if(bgMusic.paused){
+    bgMusic.play().then(()=>{ musicBtn.textContent = "♫"; }).catch(()=>{});
+  }
+}
+
+// Cualquier clic/toque del visitante puede iniciar la canción.
+document.addEventListener("click", iniciarMusica);
+document.addEventListener("touchstart", iniciarMusica, {passive:true});
+
+musicBtn.addEventListener("click", (e)=>{
+  e.stopPropagation();
+  if(bgMusic.paused){
+    bgMusic.play().then(()=>{ musicBtn.textContent = "♫"; }).catch(()=>{});
+  }else{
+    bgMusic.pause();
+    musicBtn.textContent = "🔇";
+  }
+});
+
+function verUbicacion() {
+  document.getElementById("ubicacion").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
+
+function confirmarAsistencia() {
+  const numeroWhatsApp = "573126835964"; // REEMPLAZA este número por el WhatsApp que recibirá las confirmaciones
+  const mensaje = "¡Hola! 💗 Quiero confirmar mi asistencia a los 15 años. 🎀✨";
+  const whatsapp =
+    "https://wa.me/" + numeroWhatsApp +
+    "?text=" + encodeURIComponent(mensaje);
+  window.open(whatsapp, "_blank");
+}
+
+</script>
+</body>
+</html>
